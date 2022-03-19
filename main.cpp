@@ -4,13 +4,19 @@
 #include "fileStream.h"
 #include "IMessage.h"
 #include "Factory.h"
+#include "House.h"
 int main() {
+    //建造者模式
+    House *pBone = new BoneHouse();
+    Builder pBuild(pBone);
+    pBuild.Construct();
+
     //工厂模式
-    Factory *f = new ColothFactory();
-    NikeCompany nk;
-    nk.CreateFactory(f);
-    nk.CreateProduce();
-    delete f;
+//    Factory *f = new ColothFactory();
+//    NikeCompany nk;
+//    nk.CreateFactory(f);
+//    nk.CreateProduce();
+//    delete f;
     //桥接模式
 //    IMessage_Imp *imp = new Mobile_Message();
 //    IMessage *msg = new PC_Message_Perfect(imp);
