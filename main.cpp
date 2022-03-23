@@ -9,7 +9,11 @@ int main() {
     //建造者模式
     House *pBone = new BoneHouse();
     Builder pBuild(pBone);
+    Builder *pB = new Builder(pBone);
+    pB->Construct();
     pBuild.Construct();
+    delete pBone;
+    delete pB;
 
     //工厂模式
 //    Factory *f = new ColothFactory();
